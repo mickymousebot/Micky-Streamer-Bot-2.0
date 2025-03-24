@@ -24,6 +24,7 @@ async def private_receive_handler(c: Client, m: Message):
         
         stream = f"{URL}watch/{str(msg.id)}?hash={get_hash(msg)}"
         download = f"{URL}{str(msg.id)}?hash={get_hash(msg)}"
+        webapp_url = f"https://{URL.split('//')[1].split('/')[0]}/webapp/{str(msg.id)}?hash={get_hash(msg)}"
         file_name = file_id.file_name.replace("_", " ").replace(".mp4", "").replace(".mkv", "").replace(".", " ")
         size=get_size(file_id.file_size)
         
@@ -48,7 +49,8 @@ async def private_receive_handler(c: Client, m: Message):
             quote=True,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("• ꜱᴛʀᴇᴀᴍ •", url=stream),
-                 InlineKeyboardButton("• ᴅᴏᴡɴʟᴏᴀᴅ •", url=download)]
+                 InlineKeyboardButton("• ᴅᴏᴡɴʟᴏᴀᴅ •", url=download)],
+                [InlineKeyboardButton("• ᴡᴇʙ ᴀᴘᴘ ꜱᴛʀᴇᴀᴍ •", web_app=WebAppInfo(url=webapp_url))]
             ])
         )
         
@@ -85,6 +87,7 @@ async def channel_receive_handler(bot, broadcast):
         msg = await broadcast.forward(chat_id=BIN_CHANNEL)
         stream = f"{URL}watch/{str(msg.id)}?hash={get_hash(msg)}"
         download = f"{URL}{str(msg.id)}?hash={get_hash(msg)}"
+        webapp_url = f"https://{URL.split('//')[1].split('/')[0]}/webapp/{str(msg.id)}?hash={get_hash(msg)}"
 
         await msg.reply_text(
             text=f"**Channel Name:** `{broadcast.chat.title}`\n**CHANNEL ID:** `{broadcast.chat.id}`\n**Rᴇǫᴜᴇsᴛ ᴜʀʟ:** {stream}",
@@ -94,8 +97,9 @@ async def channel_receive_handler(bot, broadcast):
             chat_id=broadcast.chat.id,
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("ꜱᴛʀᴇᴀᴍ ", url=stream),
-                 InlineKeyboardButton("ᴅᴏᴡɴʟᴏᴀᴅ ", url=download)]
+                [InlineKeyboardButton("ꜱᴛʀᴇᴀᴍ", url=stream),
+                 InlineKeyboardButton("ᴅᴏᴡɴʟᴏᴀᴅ", url=download)],
+                [InlineKeyboardButton("ᴡᴇʙ ᴀᴘᴘ ꜱᴛʀᴇᴀᴍ", web_app=WebAppInfo(url=webapp_url))]
             ])
         )
     except FloodWait as w:
