@@ -1,18 +1,18 @@
-![GitHub contributors](https://img.shields.io/github/contributors/Botsthe/AV-FILE-TO-LINK?style=flat&color=green)
-![GitHub repo size](https://img.shields.io/github/repo-size/Botsthe/AV-FILE-TO-LINK?color=green)
-![GitHub](https://img.shields.io/github/license/Botsthe/AV-FILE-TO-LINK?color=green)
+![GitHub contributors](https://img.shields.io/github/contributors/MrGhostsx/Micky-Streamer-Bot-2.0?style=flat&color=green)
+![GitHub repo size](https://img.shields.io/github/repo-size/MrGhostsx/Micky-Streamer-Bot-2.0?color=green)
+![GitHub](https://img.shields.io/github/license/MrGhostsx/Micky-Streamer-Bot-2.0?color=green)
 
 ### Demo Bot
 
 Here is our Demo bot -
 
-[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/AV_SUPPORT_GROUP)](https://t.me/AV_F2L_BOT)
+[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/MrGhostsx)](https://t.me/TempG_mailBot)
 
 ### Need Deployment Support?
 
 If you encounter any issues deploying the bot, feel free to seek assistance in our support group:
 
-[![Join Support Group](https://img.shields.io/badge/Join%20Support%20Group-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/AV_SUPPORT_GROUP)](https://t.me/AV_SUPPORT_GROUP)
+[![Join Support Group](https://img.shields.io/badge/Join%20Support%20Group-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/Tech_Shreyansh2)](https://t.me/Tech_Shreyansh2)
 
   <h1 align="center"></h1>
 <p align="center"> 
@@ -23,9 +23,9 @@ If you encounter any issues deploying the bot, feel free to seek assistance in o
     <br />
    </strong></a>
     <br />
-    <a href="https://t.me/AV_SUPPORT_GROUP">Report a Bug</a>
+    <a href="https://t.me/Tech_Shreyansh2">Report a Bug</a>
     |
-    <a href="https://t.me/AV_SUPPORT_GROUP">Request Feature</a>
+    <a href="https://t.me/Tech_Shreyansh2">Request Feature</a>
   </p>
 <hr>
 
@@ -93,26 +93,26 @@ restart - To restart the bot [FOR ADMINS USE ONLY]
 ### DEPLOY ON RENDER 
 
 <p><br>
-<a href="https://render.com/deploy?repo=https://github.com/Botsthe/AV-FILE-TO-LINK">
+<a href="https://render.com/deploy?repo=https://github.com/MrGhostsx/Micky-Streamer-Bot-2.0">
 <img src="https://render.com/images/deploy-to-render-button.svg" alt="DEPLOY ON RENDER">
 </a></p>
 
 ### DEPLOY ON KOYRB
 
 <p><br>                 
-<a href="https://app.koyeb.com/deploy?type=git&repository=github.com/Botsthe/AV-FILE-TO-LINK&branch=main&name=AV-FILE-TO-LINK">
+<a href="https://app.koyeb.com/deploy?type=git&repository=github.com/MrGhostsx/Micky-Streamer-Bot-2.0&branch=main&name=Micky-Streamer-Bot-2.0">
 <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="DEPLOY ON KOYRB">
 </a></p>
 
 ### DEPLOY ON HEROKU
 <p><br>
-<a href="https://heroku.com/deploy?template=https://github.com/Botsthe/AV-FILE-TO-LINK">
+<a href="https://heroku.com/deploy?template=https://github.com/MrGhostsx/Micky-Streamer-Bot-2.0">
 <img src="https://www.herokucdn.com/deploy/button.svg" alt="DEPLOY ON HEROKU">
 </a></p>
   
 ### DEPLOY ON VPS
 ```
-git clone https://github.com/Botsthe/AV-FILE-TO-LINK.git
+git clone https://github.com/MrGhostsx/Micky-Streamer-Bot-2.0.git
 # Install Packages
 pip3 install -U -r requirements.txt
 Edit info.py with variables as given below then run bot
@@ -137,26 +137,26 @@ python3 bot.py
 - All unwanted code removed.
 - Fully modified repo
 - Deploy To Koyeb + Heroku +etc...
-- [Developer support](https://telegram.me/AV_SUPPORT_GROUP) 24x7
+- [Developer support](https://telegram.me/Tech_Shreyansh2) 24x7
 - And many more... 
 
 </details>
 
 ### CREDIT GITHUB 
 
-- [BOTSTHE](https://github.com/Botsthe/AV-FILE-TO-LINK.git)
+- [BOTSTHE](https://github.com/MrGhostsx/Micky-Streamer-Bot-2.0.git)
 
 ### CONTACT DEVELOPER
 
-- [𝙰𝙼𝙰𝙽 𝚅𝙸𝚂𝙷𝚆𝙰𝙺𝙰𝚁𝙼𝙰](https://telegram.me/BOT_OWNER26)
+- [Tech Shreyansh](https://telegram.me/Tech_Shreyansh)
 
 ### CREDIT DEVELOPER
 
-- [𝙰𝙼𝙰𝙽 𝚅𝙸𝚂𝙷𝚆𝙰𝙺𝙰𝚁𝙼𝙰](https://telegram.me/BOT_OWNER26)
+- [Mr Ghost](https://telegram.me/MrGhostsx)
 
 ### BUY ME A COFFEE
 
-- [PHONE PE](https://envs.sh/Hgz.jpg)
+- [PHONE PE](https://i.ibb.co/rRWynz30/Uploaded-6910445402.jpg)
 
 ### 📌 NOTE
 
