@@ -16,7 +16,7 @@ If you encounter any issues deploying the bot, feel free to seek assistance in o
 
   <h1 align="center"></h1>
 <p align="center"> 
-  <img src="https://envs.sh/b6H.jpg" alt="Cover Image" width="650">
+  <img src="https://cdn.jsdelivr.net/gh/MrGhostsx/Resources@main/Images/screencaptuestream.png" alt="Cover Image" width="650">
   </a>
  <p align="center">
     A Telegram bot to turn all media and documents files to instant direct download and stream link .
