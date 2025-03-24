@@ -70,7 +70,7 @@ Nᴀᴍᴇ - {}"""
     ABOUT_TXT = """<b>╔════❰ {} ❱═══════❍
 ║╭━━━━━━━━━━━━━━━━━━➣
 ║┣⪼🤖ᴍʏ ɴᴀᴍᴇ : {}
-║┣⪼👦ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/SmartEdith_Bot'>ᴛᴇᴄʜ ꜱʜʀᴇʏᴀɴꜱʜ ᴏᴡɴᴇʀ</a>
+║┣⪼👦ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/SmartEdith_Bot'>ᴛᴇᴄʜ ꜱʜʀᴇʏᴀɴꜱʜ</a>
 ║┣⪼❣️ᴜᴘᴅᴀᴛᴇ : <a href=https://t.me/Tech_Shreyansh>ᴛᴇᴄʜ ꜱʜʀᴇʏᴀɴꜱʜ</a>
 ║┣⪼💻sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href=https://github.com/TechyShreyansh>ʀᴇᴘᴏ</a>
 ║┣⪼⏲️ʙᴏᴛ ᴜᴘᴛɪᴍᴇ :- {}
