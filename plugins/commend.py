@@ -10,8 +10,8 @@ import re
 from utils import get_readable_time
 from web.utils import StartTime, __version__
 
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 
 @Client.on_message(filters.command("start") & filters.incoming)
@@ -22,7 +22,7 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
-	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
+            InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
         ],[
             InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
             InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
@@ -41,7 +41,7 @@ async def start(client, message):
                return
             btn = [[
                 InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
-	        InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
+                InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
             ],[
                 InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
                 InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
@@ -52,8 +52,8 @@ async def start(client, message):
             )
             return
 
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
             
 @Client.on_callback_query()
@@ -63,9 +63,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
-	    InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
-	],[
-	    InlineKeyboardButton('☢️ ʙᴏᴛ ᴏᴡɴᴇʀ ☢️', url=f"https://t.me/{OWNER_USERNAME}")
+            InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
+        ],[
+            InlineKeyboardButton('☢️ ʙᴏᴛ ᴏᴡɴᴇʀ ☢️', url=f"https://t.me/{OWNER_USERNAME}")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         me2 = (await client.get_me()).mention
@@ -78,7 +78,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
-	    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
+            InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
         ],[
             InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
             InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
@@ -90,16 +90,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
 
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 	
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('• ᴀᴅᴍɪɴ •', callback_data='admincmd')
-	],[
-	    InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
-	    InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
+        ],[
+            InlineKeyboardButton('• ʜᴏᴍᴇ •', callback_data='start'),
+            InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -109,7 +109,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )  
 
     elif query.data == "admincmd":
-        #if user isnt admin then return
+        # if user isnt admin then return
         if not query.from_user.id in ADMINS:
             return await query.answer('This Feature Is Only For Admins !' , show_alert=True)
         buttons = [[
@@ -122,8 +122,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML,
        )
 
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 	
     elif query.data.startswith("sendAlert"):
@@ -162,8 +162,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         user_id = int(user_id.replace(' ' , ''))
         await query.message.edit(f"Tʜᴇ ᴜɴʙᴀɴ ᴏɴ <code>{user_id}</code> ᴡᴀs ᴇxᴇᴄᴜᴛᴇᴅ sɪʟᴇɴᴛʟʏ.")
 
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 
 @Client.on_message(filters.command("help"))
@@ -172,13 +172,13 @@ async def help(client, message):
        InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
     ]]
     reply_markup = InlineKeyboardMarkup(btn)
-    await message.send_text(
+    await message.reply_text(
         text=script.HELP2_TXT,
         reply_markup=reply_markup
     )
 
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 
 @Client.on_message(filters.command("about"))
@@ -188,11 +188,11 @@ async def about(client, message):
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     me2 = (await client.get_me()).mention
-    await message.send_text(
+    await message.reply_text(
         text=script.ABOUT_TXT.format(me2, me2, get_readable_time(time.time() - StartTime), __version__),
         reply_markup=reply_markup
     )
 	
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
+# Dont Remove My Credit @Tech_Shreyansh
+# This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
