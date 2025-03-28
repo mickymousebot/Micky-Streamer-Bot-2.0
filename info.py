@@ -26,6 +26,11 @@ PICS = environ.get('PICS', 'https://i.ibb.co/vvRqnDrZ/Uploaded-6910445402.jpg')
 # channel link information
 CHANNEL = environ.get('CHANNEL', 'https://t.me/')
 SUPPORT = environ.get('SUPPORT', 'http://t.me/')
+API = environ.get("API", "") # shortlink api
+URL = environ.get("URL", "") # shortlink domain without https://
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "") # how to open link 
+BOT_USERNAME = environ.get("BOT_USERNAME", "") # bot username without @
+VERIFY = environ.get("VERIFY", "True") # set True Or False and make sure spelling is correct and first letter capital.
 
 #Dont Remove My Credit @Tech_Shreyansh
 #This Repo Is By @SmartEdith_Bot 
