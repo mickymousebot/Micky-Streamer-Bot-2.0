@@ -7,7 +7,7 @@ from pyrogram.types import *
 from info import *
 from .fsub import get_fsub
 import re
-from utils import get_readable_time
+from utils import get_readable_time, verify_user, check_token
 from web.utils import StartTime, __version__
 
 # Dont Remove My Credit @Tech_Shreyansh
@@ -16,6 +16,27 @@ from web.utils import StartTime, __version__
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
+	    data = message.command[1]
+    if data.split("-", 1)[0] == "verify": # set if or elif it depend on your code
+        userid = data.split("-", 2)[1]
+        token = data.split("-", 3)[2]
+        if str(message.from_user.id) != str(userid):
+            return await message.reply_text(
+                text="<b>⚠️ Invalid verification link format!</b>",
+                protect_content=True
+            )
+        is_valid = await check_token(client, userid, token)
+        if is_valid == True:
+            await message.reply_text(
+                text=f"<b>✅ Verification Successful!\n👋 Hello {message.from_user.mention},You now have full access until midnight.📂 You can now access all files.</b>",
+                protect_content=True
+            )
+            await verify_user(client, userid, token)
+        else:
+            return await message.reply_text(
+                text="<b>⌛ Verification link expired!\n\nPlease generate a new verification link !</b>",
+                protect_content=True
+            )
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(message.from_user.id, message.from_user.mention))
