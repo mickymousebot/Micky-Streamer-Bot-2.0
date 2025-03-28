@@ -17,7 +17,7 @@ from web.utils import StartTime, __version__
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
 	    data = message.command[1]
-    if data.split("-", 1)[0] == "verify": # set if or elif it depend on your code
+        if data.split("-", 1)[0] == "verify": # set if or elif it depend on your code
         userid = data.split("-", 2)[1]
         token = data.split("-", 3)[2]
         if str(message.from_user.id) != str(userid):
@@ -37,10 +37,10 @@ async def start(client, message):
                 text="<b>⌛ Verification link expired!\n\nPlease generate a new verification link !</b>",
                 protect_content=True
             )
-    if not await db.is_user_exist(message.from_user.id):
+        if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(message.from_user.id, message.from_user.mention))
-    if len(message.command) != 2:
+        if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇᴅ •', url=CHANNEL),
             InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url=SUPPORT)
@@ -55,7 +55,7 @@ async def start(client, message):
         )
         return
 
-    if len(message.command) == 2 and message.command[1] in ["start"]:
+        if len(message.command) == 2 and message.command[1] in ["start"]:
         if FSUB:
             is_participant = await get_fsub(client, message)
             if not is_participant:
