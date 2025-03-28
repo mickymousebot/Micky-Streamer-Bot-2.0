@@ -15,22 +15,26 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 #This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 
-@Client.on_message((filters.private) & (filters.document | filters.video | filters.audio) , group=4)
+@Client.on_message((filters.private) & (filters.document | filters.video | filters.audio), group=4)
 async def private_receive_handler(c: Client, m: Message):
-        if not await check_verification(client, message.from_user.id) and VERIFY == True:
-        btn = [[
-            InlineKeyboardButton("🔐 Verify Now", url=await get_token(client, message.from_user.id, f"https://telegram.me/{BOT_USERNAME}?start="))
-        ],[
-            InlineKeyboardButton("❓ How To Verify", url=VERIFY_TUTORIAL)
-        ]]
-        await message.reply_text(
+    if not await check_verification(c, m.from_user.id) and VERIFY == True:
+        btn = [
+            [
+                InlineKeyboardButton("🔐 Verify Now", url=await get_token(c, m.from_user.id, f"https://telegram.me/{BOT_USERNAME}?start="))
+            ],
+            [
+                InlineKeyboardButton("❓ How To Verify", url=VERIFY_TUTORIAL)
+            ]
+        ]
+        await m.reply_text(
             text="<b>🔒 VERIFICATION REQUIRED</b>\n\nYou must verify before accessing any files!\n\n<i>Click the button below to verify:</i>",
             protect_content=True,
             reply_markup=InlineKeyboardMarkup(btn)
         )
         return
-        file_id = m.document or m.video or m.audio
-        try:  # This is the outer try block
+    
+    file_id = m.document or m.video or m.audio
+    try:
         msg = await m.copy(
             chat_id=BIN_CHANNEL,
             caption=f"**File Name:** {file_id.file_name}\n\n**Requested By:** {m.from_user.mention}")
@@ -39,7 +43,7 @@ async def private_receive_handler(c: Client, m: Message):
         download = f"{URL}{str(msg.id)}?hash={get_hash(msg)}"
         webapp_url = f"https://{URL.split('//')[1].split('/')[0]}/webapp/{str(msg.id)}?hash={get_hash(msg)}"
         file_name = file_id.file_name.replace("_", " ").replace(".mp4", "").replace(".mkv", "").replace(".", " ")
-        size=get_size(file_id.file_size)
+        size = get_size(file_id.file_size)
         
         a = await msg.reply_text(
             text=f"ʀᴇǫᴜᴇꜱᴛᴇᴅ ʙʏ : [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nUꜱᴇʀ ɪᴅ : {m.from_user.id}\nStream ʟɪɴᴋ : {stream}",
@@ -51,7 +55,7 @@ async def private_receive_handler(c: Client, m: Message):
         if FSUB:
             is_participant = await get_fsub(c, m)
             if not is_participant:
-               return
+                return
                 
         ban_chk = await db.is_banned(int(m.from_user.id))
         if ban_chk == True:
@@ -72,7 +76,7 @@ async def private_receive_handler(c: Client, m: Message):
 
         # After 6 hours, delete `log_msg`, `a`, and `k`
         try:
-            await log_msg.delete()
+            await msg.delete()
             await a.delete()
             await k.delete()
         except Exception as e:
@@ -87,7 +91,7 @@ async def private_receive_handler(c: Client, m: Message):
 #This Repo Is By @SmartEdith_Bot 
 # For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
 
-@Client.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
+@Client.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo) & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
     if int(broadcast.chat.id) in BAN_CHNL:
         print("chat trying to get straming link is found in BAN_CHNL,so im not going to give stram link")
@@ -96,7 +100,7 @@ async def channel_receive_handler(bot, broadcast):
     if (int(broadcast.chat.id) in BANNED_CHANNELS) or (ban_chk == True):
         await bot.leave_chat(broadcast.chat.id)
         return
-    try:  # This is the outer try block
+    try:
         msg = await broadcast.forward(chat_id=BIN_CHANNEL)
         stream = f"{URL}watch/{str(msg.id)}?hash={get_hash(msg)}"
         download = f"{URL}{str(msg.id)}?hash={get_hash(msg)}"
@@ -124,7 +128,3 @@ async def channel_receive_handler(bot, broadcast):
     except Exception as e:
         await bot.send_message(chat_id=BIN_CHANNEL, text=f"**#ERROR_TRACKEBACK:** `{e}`", disable_web_page_preview=True)
         print(f"Cᴀɴ'ᴛ Eᴅɪᴛ Bʀᴏᴀᴅᴄᴀsᴛ Mᴇssᴀɢᴇ!\nEʀʀᴏʀ:  **Give me edit permission in updates and bin Channel!{e}**")
-
-#Dont Remove My Credit @Tech_Shreyansh
-#This Repo Is By @SmartEdith_Bot 
-# For Any Kind Of Error Ask Us In Support Group @Tech_Shreyansh2
