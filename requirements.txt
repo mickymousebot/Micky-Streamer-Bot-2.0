@@ -9,6 +9,7 @@ apscheduler
 requests
 psutil
 jinja2
+shortzy
 pytz
 
 #Dont Remove My Credit @Tech_Shreyansh
