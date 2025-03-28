@@ -29,8 +29,8 @@ async def private_receive_handler(c: Client, m: Message):
             reply_markup=InlineKeyboardMarkup(btn)
         )
         return
-    file_id = m.document or m.video or m.audio
-    try:  # This is the outer try block
+        file_id = m.document or m.video or m.audio
+        try:  # This is the outer try block
         msg = await m.copy(
             chat_id=BIN_CHANNEL,
             caption=f"**File Name:** {file_id.file_name}\n\n**Requested By:** {m.from_user.mention}")
