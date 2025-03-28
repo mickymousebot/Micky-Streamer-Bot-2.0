@@ -3,9 +3,10 @@ from asyncio import TimeoutError
 from web.utils.file_properties import get_hash
 from pyrogram import Client, filters, enums
 from info import *
-from utils import get_size
+from utils import get_size, check_verification, get_token
 from .fsub import get_fsub
-from Script import script
+from Script import script 
+from info import VERIFY, VERIFY_TUTORIAL, BOT_USERNAME
 from database.users_db import db
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
@@ -16,6 +17,18 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 
 @Client.on_message((filters.private) & (filters.document | filters.video | filters.audio) , group=4)
 async def private_receive_handler(c: Client, m: Message):
+        if not await check_verification(client, message.from_user.id) and VERIFY == True:
+        btn = [[
+            InlineKeyboardButton("🔐 Verify Now", url=await get_token(client, message.from_user.id, f"https://telegram.me/{BOT_USERNAME}?start="))
+        ],[
+            InlineKeyboardButton("❓ How To Verify", url=VERIFY_TUTORIAL)
+        ]]
+        await message.reply_text(
+            text="<b>🔒 VERIFICATION REQUIRED</b>\n\nYou must verify before accessing any files!\n\n<i>Click the button below to verify:</i>",
+            protect_content=True,
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+        return
     file_id = m.document or m.video or m.audio
     try:  # This is the outer try block
         msg = await m.copy(
